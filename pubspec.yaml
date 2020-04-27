@@ -1,6 +1,6 @@
 name: guard
-version: 1.0.2
-description: Evauluates the function wrapping the body with try/catch and returns default value if error was raised
+version: 1.0.3
+description: Evauluates the function wrapping the body with try/catch and returns default value if error was raised or return value is null
 homepage: https://github.com/lesnitsky/guard
 
 environment:

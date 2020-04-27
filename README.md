@@ -1,10 +1,10 @@
 # guard
 
-[![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=75400)](https://lesnitsky.dev?utm_source=guard)
+[![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=17435)](https://lesnitsky.dev?utm_source=guard)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/guard.svg?style=social)](https://github.com/lesnitsky/guard)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_dev)
 
-Evauluates the function wrapping the body with try/catch and returns default value if error was raised
+Evauluates the function wrapping the body with try/catch and returns default value if error was raised or return value is null
 
 ## Installation
 
@@ -12,8 +12,9 @@ pubspec.yaml:
 
 ```yaml
 dependencies:
-  guard: ^1.0.2
+  guard: ^1.0.3
 ```
+
 
 ## Example
 
@@ -32,13 +33,12 @@ void main() {
 
   User user;
 
-  guard(() => Text(user.name), Text('Loading...')); // Loading...
-
-  user = User('John Brown');
-
-  guard(() => Text(user.name), Text('Loading...')); // John Brown
+  guard(() => user, 'No user found'); // No User found
+  guard(() => Text(user.name), Text('Loading...')); // Loading...;
 }
+
 ```
+
 
 ## License
 

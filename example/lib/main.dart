@@ -12,5 +12,6 @@ void main() {
 
   User user;
 
-  guard(() => Text(user.name), Text('Loading...'));
+  guard(() => user, 'No user found'); // No User found
+  guard(() => Text(user.name), Text('Loading...')); // Loading...;
 }
