@@ -1,4 +1,4 @@
-T guard<T>(T Function() callback, T defaultValue) {
+T guard<T>(T Function() callback, [T defaultValue]) {
   T result;
 
   try {
