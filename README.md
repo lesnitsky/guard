@@ -1,6 +1,6 @@
 # guard
 
-[![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=17435)](https://lesnitsky.dev?utm_source=guard)
+[![lesnitsky.dev](https://lesnitsky.dev/shield.svg?hash=116061)](https://lesnitsky.dev?utm_source=guard)
 [![GitHub stars](https://img.shields.io/github/stars/lesnitsky/guard.svg?style=social)](https://github.com/lesnitsky/guard)
 [![Twitter Follow](https://img.shields.io/twitter/follow/lesnitsky_dev.svg?label=Follow%20me&style=social)](https://twitter.com/lesnitsky_dev)
 
@@ -19,6 +19,7 @@ dependencies:
 ## Example
 
 ```dart
+import 'package:flutter/material.dart';
 import 'package:guard/guard.dart';
 
 class User {
@@ -35,6 +36,10 @@ void main() {
 
   guard(() => user, 'No user found'); // No User found
   guard(() => Text(user.name), Text('Loading...')); // Loading...;
+
+  asyncGuard(() async {
+    await Future.error(null);
+  }, 42); // Future(42);
 }
 
 ```
